@@ -1,0 +1,292 @@
+// Zed settings
+{
+  "context_server_timeout": 30,
+  "format_on_save": "on",
+  "cli_default_open_behavior": "existing_window",
+  "minimum_split_diff_width": 150.0,
+  "base_keymap": "VSCode",
+  "when_closing_with_no_tabs": "platform_default",
+  "ui_font_weight": 400.0,
+  "agent_buffer_font_size": 12.0,
+  "diff_view_style": "split",
+  "project_panel": {
+    "dock": "right",
+  },
+  "outline_panel": {
+    "dock": "right",
+  },
+  "collaboration_panel": {
+    "dock": "right",
+  },
+  "agent_servers": {
+    "claude-acp": {
+      "favorite_config_option_values": {
+        "effort": [
+          "high"
+        ],
+        "model": [
+          "opus[1m]"
+        ]
+      },
+      "default_config_options": {
+        "mode": "auto",
+        "effort": "high",
+        "model": "opus[1m]"
+      },
+      "type": "registry"
+    },
+    "codex-acp": {
+      "type": "registry"
+    },
+    "github-copilot-cli": {
+      "type": "registry",
+    },
+  },
+  "git_panel": {
+    "dock": "right",
+    "tree_view": true,
+  },
+  "tab_size": 2,
+  "git": {
+    "inline_blame": {
+      "min_column": 0,
+      "show_commit_summary": true,
+    },
+  },
+  "prettier": {
+    "allowed": true,
+  },
+  "vim_mode": false,
+  "colorize_brackets": false,
+  "context_servers": {
+    "Notion": {
+      "enabled": true,
+      "url": "https://mcp.notion.com/mcp"
+    },
+    "sentry-mcp": {
+      "enabled": true,
+      "remote": false,
+      "settings": {
+        "sentry_host": "",
+        "sentry_access_token": "##########################"
+      }
+    },
+    "postgres-context-server": {
+      "enabled": true,
+      "remote": false,
+      "settings": {
+        "database_url": "postgresql://postgres:postgres@localhost:5432/ssa_dev"
+      }
+    },
+    "mcp-server-airwallex": {
+      "settings": {},
+
+      "enabled": true,
+      "url": "https://mcp-demo.airwallex.com/docs",
+    },
+    "mcp-server-context7": {
+      "enabled": true,
+      "settings": {
+        "context7_api_key": "##########################",
+      },
+    },
+  },
+  "edit_predictions": {
+    "provider": "copilot",
+    "disabled_globs": [
+      "**/node_modules/**",
+      "**/.git/**",
+      "**/dist/**",
+      "**/build/**",
+      "**/out/**",
+    ],
+    "mode": "eager",
+    "copilot": {
+      "proxy": null,
+      "proxy_no_verify": null,
+    },
+    "enabled_in_text_threads": true,
+  },
+  "autosave": "on_focus_change",
+  "agent": {
+    "terminal_init_command": "claude",
+    "sidebar_side": "left",
+    "inline_assistant_model": {
+      "provider": "openai-subscribed",
+      "model": "gpt-5.4",
+      "enable_thinking": false,
+    },
+    "tool_permissions": {
+      "default": "allow",
+    },
+    "favorite_models": [
+      {
+        "provider": "copilot_chat",
+        "model": "gpt-4.1",
+        "enable_thinking": false
+      },
+      {
+        "provider": "copilot_chat",
+        "model": "claude-opus-4.6",
+        "enable_thinking": false
+      },
+      {
+        "provider": "copilot_chat",
+        "model": "claude-sonnet-4.6",
+        "enable_thinking": true,
+        "effort": "max"
+      },
+      {
+        "provider": "openai-subscribed",
+        "model": "gpt-5.3-codex",
+        "enable_thinking": true,
+        "effort": "medium"
+      },
+      {
+        "provider": "copilot_chat",
+        "model": "claude-opus-4.8",
+        "enable_thinking": true,
+        "effort": "max"
+      },
+      {
+        "provider": "openai-subscribed",
+        "model": "gpt-5.6-sol",
+        "enable_thinking": true,
+        "effort": "high"
+      },
+      {
+        "provider": "openai-subscribed",
+        "model": "gpt-5.6-terra",
+        "enable_thinking": true,
+        "effort": "medium"
+      }
+    ],
+    "play_sound_when_agent_done": "always",
+    "profiles": {
+      "ask": {
+        "default_model": {
+          "effort": "medium",
+          "enable_thinking": true,
+          "provider": "openai-subscribed",
+          "model": "gpt-5.5",
+        },
+        "name": "Ask",
+        "tools": {
+          "search_web": true,
+          "diagnostics": true,
+          "fetch": true,
+          "list_directory": true,
+          "project_notifications": false,
+          "now": true,
+          "find_path": true,
+          "read_file": true,
+          "open": true,
+          "grep": true,
+          "subagent": true,
+          "thinking": true,
+        },
+        "enable_all_context_servers": false,
+        "context_servers": {
+          "mcp-server-context7": {
+            "tools": {
+              "resolve-library-id": true,
+              "query-docs": true,
+            },
+          },
+          "mcp-server-airwallex": {
+            "tools": {
+              "search_public_docs": true,
+              "read_integration_best_practices": true,
+            },
+          },
+        },
+      },
+      "write": {
+        "default_model": {
+          "effort": "high",
+          "provider": "copilot_chat",
+          "model": "claude-sonnet-4.6",
+          "enable_thinking": true,
+        },
+        "name": "Write",
+        "tools": {
+          "search_web": true,
+          "copy_path": true,
+          "create_directory": true,
+          "create_file": true,
+          "delete_path": true,
+          "diagnostics": true,
+          "edit_file": true,
+          "fetch": true,
+          "list_directory": true,
+          "move_path": true,
+          "now": true,
+          "find_path": true,
+          "read_file": true,
+          "grep": true,
+          "terminal": true,
+          "thinking": true,
+          "open": true,
+        },
+        "enable_all_context_servers": true,
+        "context_servers": {},
+      },
+    },
+    "default_profile": "write",
+    "dock": "left",
+    "default_model": {
+      "effort": "high",
+      "enable_thinking": true,
+      "provider": "openai-subscribed",
+      "model": "gpt-5.6-sol",
+    },
+  },
+  "ui_font_family": "FiraCode Nerd Font",
+  "buffer_font_family": "FiraCode Nerd Font",
+  "theme": "One Dark",
+  "icon_theme": {
+    "mode": "system",
+    "light": "Zed (Default)",
+    "dark": "Colored Zed Icons Theme Dark",
+  },
+  "languages": {
+    "TypeScript": {
+      "code_actions_on_format": {
+        // Use ESLint's --fix:
+        "source.fixAll.eslint": true,
+      },
+    },
+    "JavaScript": {
+      "code_actions_on_format": {
+        // Use ESLint's --fix:
+        "source.fixAll.eslint": true,
+      },
+    },
+    "TSX": {
+      "code_actions_on_format": {
+        // Use ESLint's --fix:
+        "source.fixAll.eslint": true,
+      },
+    },
+  },
+  "terminal": {
+    "font_family": "FiraCode Nerd Font",
+    "line_height": {
+      "custom": 1.25,
+    },
+  },
+  "lsp": {
+    "wakatime": {
+      "settings": {
+        "api-key": "####################",
+      },
+    },
+    "protobuf-language-server": {
+      "binary": {
+        "path": "buf",
+        "arguments": ["beta", "lsp"],
+      },
+    },
+  },
+  "minimap": { "show": "auto", "thumb": "hover" },
+}
